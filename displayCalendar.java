@@ -24,7 +24,7 @@ public class displayCalendar {
 			System.out.println(i);
 		}
 		
-		cal.getMaximum(day);
+		
 	}
 
 }
