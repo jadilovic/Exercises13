@@ -1,6 +1,7 @@
 package Vjezbe;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class displayCalendar {
@@ -8,22 +9,27 @@ public class displayCalendar {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		if(args.length != 2){
-			System.out.println("Usage: displayCalendar month year");
-			System.exit(0);
-		}
-		
-		String month = args[0];
-		int monthN = Integer.parseInt(month);
-		String year = args[1];
-		int yearN = Integer.parseInt(year);
+		Calendar calP = new GregorianCalendar();
+		int monthN = 0;
+		int yearN = 0;
 		int day = 1;
 		
-		Calendar cal = new GregorianCalendar(yearN, monthN - 1, day);
+		if(args.length != 2){
+			System.out.println("Usage: displayCalendar month year");
+			monthN = calP.get(Calendar.MONTH);
+			yearN = calP.get(Calendar.YEAR);
+		}
+		else{
+		monthN = Integer.valueOf(args[0]) - 1;
+		yearN = Integer.valueOf(args[1]);
+		}
+		
+		Calendar cal = new GregorianCalendar(yearN, monthN, day);
 		printHeading(cal);
 		
-		System.out.println(cal.get(Calendar.DATE));
-		System.out.println(cal.getActualMaximum(Calendar.DATE));
+		// print space before first day in week
+		for(int i = 1; i < cal.get(Calendar.DAY_OF_WEEK); i++)
+			System.out.print("    ");
 		
 		while(cal.get(Calendar.DATE) < cal.getActualMaximum(Calendar.DATE)){
 			if(cal.get(Calendar.DAY_OF_WEEK) == 7)
