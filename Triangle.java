@@ -39,4 +39,16 @@ public class Triangle extends GeometricObject{
 				"\nwith color: " + getColor() + ", and is filled: " + isFilled();
 	}
 
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int compareTo(GeometricObject o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

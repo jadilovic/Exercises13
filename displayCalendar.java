@@ -14,12 +14,16 @@ public class displayCalendar {
 		int yearN = 0;
 		int day = 1;
 		
-		if(args.length != 2){
+		if(args.length < 1){
 			System.out.println("Usage: displayCalendar month year");
 			monthN = calP.get(Calendar.MONTH);
 			yearN = calP.get(Calendar.YEAR);
 		}
-		else{
+		else if(args.length == 1){
+			monthN = Integer.valueOf(args[0]) - 1;
+			yearN = calP.get(Calendar.YEAR);
+		}
+		else {
 		monthN = Integer.valueOf(args[0]) - 1;
 		yearN = Integer.valueOf(args[1]);
 		}
