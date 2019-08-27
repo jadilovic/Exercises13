@@ -18,5 +18,4 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
 		else
 		return 0;
 	}
-
 }

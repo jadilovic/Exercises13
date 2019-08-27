@@ -12,6 +12,7 @@ public class testLargerCC {
 		System.out.println("c1 area is: " + cc1.getArea());
 		System.out.println("c2 area is: " + cc2.getArea());
 		System.out.println("Greater Circle area is in " + ComparableCircle.max(cc1, cc2).toString());
+		System.out.println("Name of the instance" + ComparableCircle.)
 	}
 
 }
