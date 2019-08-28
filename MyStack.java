@@ -2,7 +2,7 @@ package Vjezbe;
 
 import java.util.ArrayList;
 
-public class MyStack {
+public class MyStack implements Cloneable{
 
 		private ArrayList<Object> list = new ArrayList<>();
 		
@@ -30,6 +30,24 @@ public class MyStack {
 			
 			@Override
 			public String toString() {
-				return "stack: " + list.toString();
+				return "stack: " + list.toString() + "\n";
+			}
+			
+			//@Override
+			//public Object clone() throws CloneNotSupportedException{
+			//	MyStack myStackClone = (MyStack)super.clone();
+			//	return myStackClone;
+			//}
+			
+			//@Override
+			//public Object clone() throws CloneNotSupportedException{
+			//	return super.clone();
+			//}
+			
+			@Override
+			public Object clone() throws CloneNotSupportedException{
+				MyStack deepCopy = new MyStack();
+				deepCopy.list = (ArrayList<Object>)list.clone();
+				return deepCopy;
 			}
 		}
