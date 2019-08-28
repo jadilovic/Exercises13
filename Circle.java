@@ -1,6 +1,6 @@
 package Vjezbe;
 
-public class Circle extends GeometricObject{
+public class Circle extends GeometricObject implements Comparable<Circle>{
 
 	private double radius;
 	
@@ -43,5 +43,17 @@ public class Circle extends GeometricObject{
 	@Override
 	public String toString(){
 		return "" + getArea();
+	}
+	
+	public boolean equals(Circle o){
+		return this.getRadius() == o.getRadius();
+	}
+
+	@Override
+	public int compareTo(Circle o) {
+		if(this.equals(o))
+			return 1;
+		else
+		return -1;
 	}
 }
