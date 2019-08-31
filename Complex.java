@@ -56,12 +56,23 @@ public class Complex implements Cloneable{
 		return imag + "i";
 	}
 
-	@Override
-	public String toString(){
-		if(imag == 0)
-			return getRealPart();
-		else
-		return "(" + getRealPart() + " + " + getImagineryPart() + ")";
-	}
+	//@Override
+	//public String toString(){
+	//	if(imag == 0)
+	//		return getRealPart();
+	//	else
+	//	return "(" + getRealPart() + " + " + getImagineryPart() + ")";
+	//}
 	
+	@Override /** Retrun a string description 
+	of this complex number */
+public String toString() {
+	return b == 0 ? a + "" : "(" + a + " + " + b + "i)";
+}
+	
+	@Override /** Override the protectec clone method defined in
+	the Object class, and strengthen its accexxibility */
+public Complex clone() throws CloneNotSupportedException {
+	return (Complex)super.clone();
+}
 }

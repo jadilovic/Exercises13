@@ -25,6 +25,9 @@ public class testComplex {
 		Complex fNum = new Complex(firstComNum[0], firstComNum[1]);
 		Complex sNum = new Complex(secondComNum[0], secondComNum[1]);
 		
+		System.out.println(fNum);
+		System.out.println(sNum);
+		
 		results[0] = fNum.add(sNum);
 		results[1] = fNum.subtract(sNum);
 		results[2] = fNum.multiply(sNum);
