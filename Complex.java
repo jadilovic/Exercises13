@@ -2,7 +2,8 @@ package Vjezbe;
 
 public class Complex implements Cloneable{
 
-	public double a, b;
+	private double a, b;
+	private double real, imag;
 	
 	public Complex(){
 		a = 0;
@@ -19,23 +20,48 @@ public class Complex implements Cloneable{
 		this.b = b;
 	}
 	
-	public Complex add(Complex scn2){
-		double addFcn = (a + scn2.a);
-		double addScn = (b + scn2.b);
-		return new Complex(addFcn, addScn);
-	}
-
-	public double getRealPart() {
-		return 0;
+	public String add(Complex scn){
+		real = (a + scn.a);
+		imag = (b + scn.b);
+		return "(" + a + " + " + b + "i) + (" + scn.a + " + " + scn.b + "i) = " + real + " + " + imag + "i";
 	}
 	
-	public double getImagineryPart() {
-		return 0;
+	public String subtract(Complex scn){
+		real = (a - scn.a);
+		imag = (b - scn.b);
+		return "(" + a + " + " + b + "i) - (" + scn.a + " + " + scn.b + "i) = " + real + " + " + imag + "i";
+	}
+	
+	public String multiply(Complex scn){
+		real = (a * scn.a) - (b * scn.b);
+		imag = (b * scn.a) + (a * scn.b);
+		return "(" + a + " + " + b + "i) * (" + scn.a + " + " + scn.b + "i) = " + real + " + " + imag + "i";
+	}
+	
+	public String divide(Complex scn){
+		real = ((a * scn.a + b * scn.b) / (Math.pow(scn.a, 2) + Math.pow(scn.b, 2))) + ((b * scn.a) - (a * scn.b)) / (Math.pow(scn.a, 2) + Math.pow(scn.b, 2));
+		imag = (b * scn.a + a * scn.b);
+		return "(" + a + " + " + b + "i) / (" + scn.a + " + " + scn.b + "i) = " + real + " + " + imag + "i";
+	}
+	
+	public String abs(){
+		return "" + Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+	}
+
+	public String getRealPart() {
+		return "" + real;
+	}
+	
+	public String getImagineryPart() {
+		return imag + "i";
 	}
 
 	@Override
 	public String toString(){
-		return null;
+		if(imag == 0)
+			return getRealPart();
+		else
+		return "(" + getRealPart() + " + " + getImagineryPart() + ")";
 	}
 	
 }

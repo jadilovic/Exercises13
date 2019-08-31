@@ -9,7 +9,7 @@ public class testComplex {
 
 		double[] firstComNum = new double[2];
 		double[] secondComNum = new double[2];
-		Complex[] results = new Complex[5];
+		String[] results = new String[5];
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the first complex number: ");
@@ -26,10 +26,13 @@ public class testComplex {
 		Complex sNum = new Complex(secondComNum[0], secondComNum[1]);
 		
 		results[0] = fNum.add(sNum);
+		results[1] = fNum.subtract(sNum);
+		results[2] = fNum.multiply(sNum);
+		results[3] = fNum.divide(sNum);
+		results[4] = fNum.abs();
 		
 		for(int i = 0; i < results.length; i++){
-		System.out.println("(" + firstComNum[0] + " + " + firstComNum[1] + ") + (" + secondComNum[0] + " + " + secondComNum[1] + ")" +
-		" = " + results[i].a + " + " + results[i].b);
+		System.out.println(results[i]);
 		}
 	}
 
