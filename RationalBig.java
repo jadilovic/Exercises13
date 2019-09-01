@@ -51,10 +51,10 @@ for (BigInteger k = BigInteger.ONE; k.compareTo(num) <= 0 && k.compareTo(den) <=
 			return new Rational(addN.longValue(), addD.longValue());
 		}
 		
-		public Rational multiply(Rational secondRational){
+		public RationalBig multiply(RationalBig secondRational){
 			BigInteger addN = numerator.multiply(secondRational.getNumerator());
 			BigInteger addD = denominator.multiply(secondRational.getDenominator());
-			return new Rational(addN.longValue(), addD.longValue());
+			return new RationalBig(addN, addD);
 		}
 		
 		public Rational divide(Rational secondRational){

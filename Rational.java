@@ -4,8 +4,8 @@ import java.math.BigInteger;
 
 public class Rational extends Number implements Comparable<Rational>{
 
-		BigInteger numerator = new BigInteger("0");
-		BigInteger denominator = new BigInteger("1");
+		long numerator = 0;
+		long denominator = 1;
 		
 		public Rational(){
 			this(0, 1);
@@ -13,8 +13,8 @@ public class Rational extends Number implements Comparable<Rational>{
 		
 		public Rational(long numerator, long denominator){
 			long gcd = gcd(numerator, denominator);
-			this.numerator = BigInteger.valueOf(((denominator > 0) ? 1 : -1) * numerator / gcd);
-			this.denominator = BigInteger.valueOf(Math.abs(denominator) / gcd);
+			this.numerator = (denominator > 0 ? 1 : -1) * numerator / gcd);
+			this.denominator = Math.abs(denominator) / gcd;
 		}
 		
 		private static long gcd(long numerator2, long denominator2) {
@@ -29,11 +29,11 @@ public class Rational extends Number implements Comparable<Rational>{
 			return gcd;
 		}
 
-		public BigInteger getNumerator(){
+		public long getNumerator(){
 			return numerator;
 		}
 		
-		public BigInteger getDenominator(){
+		public long getDenominator(){
 			return denominator;
 		}
 		
