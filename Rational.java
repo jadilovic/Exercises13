@@ -39,9 +39,9 @@ public class Rational extends Number implements Comparable<Rational>{
 		
 	public Rational add(Rational secondRational){
 	Rational addR = new Rational();
-	BigInteger addN = numerator.multiply(secondRational.denominator).add(denominator.multiply(secondRational.getNumerator()));
-	BigInteger addD = denominator.multiply(secondRational.getDenominator());
-			return new Rational(addN.longValue(), addD.longValue());
+	long addN = numerator * secondRational.denominator + denominator + secondRational.getNumerator();
+	long addD = denominator * (secondRational.getDenominator());
+			return new Rational(addN, addD);
 		}
 		
 		public Rational subtract(Rational secondRational){
